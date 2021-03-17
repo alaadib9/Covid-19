@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        covid
+    </header>
+    <nav>
+        <a href="myRecord.ejs">ALL RECORDS </a>
+        <a href="/">HOME</a>
+        <a href="allCountries .ejs">ALL COUNTRIES</a>
+    </nav>
+    <main>
+        <% data.forEach(renderHome=>{ %>
+            <div class="card">
+                <p><%= renderHome.TotalConfirmed%></p>
+                <p><%= renderHome.TotalDeaths%></p>
+                <p><%=renderHome.TotalRecovered%></p>
+            </div>
+     <% })  %>
+            <form action="/getCountryResult" method="POST" >
+            <input type="text" value="Country" name="country">
+            <input type="text" value="CountryCode" name="CountryCode" >
+            <input type="text" value="Province" name="Province"  >
+            <input type="text" value="city" >
+            <input type="text" value="citycode" >
+            <input type="text" value="lat">
+            <input type="text" value="lon">
+            <input type="text" value="cases">
+            <input type="text" value="status">
+            <input type="text" value="data">
+            <button type="submit"> Show DATA</button>
+            </form>
+
+
+
+
+
+    </main>
+</body>
+</html>
